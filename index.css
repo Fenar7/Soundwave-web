@@ -1,0 +1,87 @@
+/* the styles for index */
+.home-main-section{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.home-main-section .img-wrapper{
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+.home-main-section .lady-image{
+    background-image: url(images/landing-page-girl.png);
+    flex-grow: 1;
+    max-height: 70vh;
+    min-width: 30vw;
+    background-size: contain; /*it will fit the image without croppin anyting or scaling it*/
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+.home-main-section .call-to-action{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+    align-self: center; /* this will the text to the center of its container*/
+}
+
+/* adding a media query when our image gets too small */
+@media (max-width: 900px){
+    .home-main-section .img-wrapper{
+        display: none;
+    }
+
+    .home-main-section{
+        justify-content: center;
+        /* when the iamge gets removed we want the text to be in the dead center of the screen*/
+    }
+}
+
+.home-page-circle-1{
+    position: absolute;
+    height: 20vw;
+    width: 20vw;
+    border-radius: 50%;
+    background-color: rgba(188, 58, 128, .1);
+    bottom: 5vw; 
+    left: 5vw;
+    z-index: -1;
+}
+
+.home-page-circle-2{
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+    background-color: rgba(23, 98, 167, 0.1);
+    top: 8vw;
+    left: 38vw;
+    z-index: -1;
+}
+
+.home-page-circle-3{
+    position: absolute;
+    overflow: hidden;
+    height: 45vw;
+    width: 45vw;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.home-page-circle-3::before{
+    content: '';
+    transform: translate(40%, 40%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgba(23, 98, 167, 0.1);
+}
